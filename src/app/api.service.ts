@@ -8,10 +8,14 @@ export class ApiService {
 
   constructor(private http: HttpClient) { }
   
-  url = "http://localhost:49155";
+  url = "http://localhost:8081";
 
   login(data: any) {
-    return this.http.post(this.url + '/api/user/login', data);
+    return this.http.post(this.url + '/api/auth/login', data);
+  }
+
+  getCurrentUser() {
+    return this.http.get(this.url + '/api/users/current', this.generateHeader());
   }
 
   userRegistration(data: any) {

@@ -20,11 +20,10 @@ export class RegistrationComponent implements OnInit {
       passwordConfirmation: ['', Validators.required],
       firstName: ['', Validators.required],
       lastName: ['', Validators.required ],
-      address: ['', Validators.required],
-      city: ['', Validators.required],
-      country: ['', Validators.required],
-      phoneNumber: ['', Validators.required],
-      description: ['', Validators.required]
+      gender: ['', Validators.required],
+      userType: ['', Validators.required],
+      phone: ['', Validators.required],
+      birthDate: ['', Validators.required]
     });
   }
 
@@ -41,13 +40,12 @@ export class RegistrationComponent implements OnInit {
         posswordConformation : this.form.get('passwordConformation')?.value,
         firstName: this.form.get('firstName')?.value,
         lastName: this.form.get('lastName')?.value,
-        address: this.form.get('address')?.value,
-        city: this.form.get('city')?.value,
-        country: this.form.get('country')?.value,
-        phoneNumber: this.form.get('phoneNumber')?.value,
-        description: this.form.get('description')?.value,
+        userType: 2,
+        gender: this.selectedType,
+        phone: this.form.get('phone')?.value,
+        birthDate: this.form.get('birthDate')?.value,
         }).subscribe((response: any) => {
-        this.router.navigate(['/home']);
+        this.router.navigate(['/login']);
       })
     }
   }

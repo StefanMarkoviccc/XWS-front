@@ -19,20 +19,19 @@
                     <input matInput placeholder="Last name" formControlName="lastName" required>
                 </mat-form-field> 
                 <mat-form-field>
-                    <input matInput placeholder="Address" formControlName="address" required>
+                    <input matInput placeholder="Birth date" formControlName="birthDate" required>
                 </mat-form-field>
                 <mat-form-field>
-                    <input matInput placeholder="City" formControlName="city" required>
+                    <input matInput placeholder="Phone number" formControlName="phone" required>
                 </mat-form-field>
                 <mat-form-field>
-                    <input matInput placeholder="Country" formControlName="country" required>
+                    <mat-label>Select an options</mat-label>
+                    <mat-select [(ngModel)]="selectedType">
+                        <mat-option value="1">FEMALE</mat-option>
+                        <mat-option value="2">MALE</mat-option>
+                        <mat-option value="3">OTHER</mat-option>
+                    </mat-select>
                 </mat-form-field>
-                <mat-form-field>
-                    <input matInput placeholder="Phone number" formControlName="phoneNumber" required>
-                </mat-form-field>
-                <mat-form-field>
-                    <input matInput placeholder="Description" formControlName="description" required>
-                </mat-form-field> 
                 <button mat-raised-button color="primary">Register</button>
             </form>
         </mat-card-content>
