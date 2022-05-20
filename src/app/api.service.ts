@@ -8,18 +8,18 @@ export class ApiService {
 
   constructor(private http: HttpClient) { }
   
-  url = "http://localhost:8081";
+  url = "http://localhost:8080";
 
   login(data: any) {
-    return this.http.post(this.url + '/api/auth/login', data);
+    return this.http.post(this.url + '/api/users/auth/login', data);
   }
 
   getCurrentUser() {
-    return this.http.get(this.url + '/api/users/current', this.generateHeader());
+    return this.http.get(this.url + '/api/users/user/current', this.generateHeader());
   }
 
   userRegistration(data: any) {
-    return this.http.post(this.url + '/api/user/register', data);
+    return this.http.post(this.url + '/api/users/user/register', data);
   }
 
   generateHeader() : any {
