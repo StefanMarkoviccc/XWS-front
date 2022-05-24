@@ -22,6 +22,7 @@ import { JobHomePageComponent } from './job-home-page/job-home-page.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { UserHomePageComponent } from './user-home-page/user-home-page.component';
 import { LoginComponent } from './login/login.component';
+import { UnregisteredHomePageComponent } from './unregistered-home-page/unregistered-home-page.component';
 
 
 @NgModule({
@@ -31,6 +32,7 @@ import { LoginComponent } from './login/login.component';
     RegistrationComponent,
     UserHomePageComponent,
     LoginComponent,
+    UnregisteredHomePageComponent,
   ],
   imports: [
     BrowserModule,
