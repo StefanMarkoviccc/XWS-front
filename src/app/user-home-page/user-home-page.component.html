@@ -2,8 +2,13 @@
     <mat-card>
         <mat-card-content>
             <form [formGroup]="form" (ngSubmit)="onSubmit()">
-                
+                <input type="text" placeholder="Search profiles..." formControlName="search">
+                <button mat-raised-button color="primary">Search</button>
             </form>
+            <div class="post" *ngFor="let post of posts">
+                <h1 class="title">{{post.Content}}</h1>
+                <h1 class="title">{{post.Image}}</h1>   
+            </div>
         </mat-card-content>
     </mat-card>
 </div>

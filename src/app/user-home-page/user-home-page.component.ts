@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { ApiService } from '../api.service';
-import { ActivatedRoute, Router } from '@angular/router';
 @Component({
   selector: 'app-user-home-page',
   templateUrl: './user-home-page.component.html',
@@ -10,20 +9,38 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class UserHomePageComponent implements OnInit {
 
   form: FormGroup
-  user: any
-  userId: any
+  profiles: any
+  posts: any;
 
-  constructor(private formBuilder: FormBuilder,  private api: ApiService, private activatedRoute: ActivatedRoute,private router: Router) 
+  constructor(private formBuilder: FormBuilder, private api : ApiService) 
   {
     this.form = this.formBuilder.group({
       search: ['']
-    });
+    });   
+  }
 
-   
-  }
   ngOnInit(): void {
-    
+    this.getPublicProfiles();
   }
-  onSubmit() {}
+
+  getUserPublicPosts(){
+
+    this.api.getUserPublicPosts().subscribe((response: any) => {
+      this.posts = response;
+  });
+}
+
+  getPublicProfiles() {
+
+    let search = this.form.get('search')?.value ? this.form.get('search')?.value : ''
+
+    this.api.getPublicProfiles({search: search}).subscribe((response: any) => {
+      this.profiles = response;
+    })
+  }
+
+  onSubmit() {
+    this.getPublicProfiles();
+  }
 
 }
