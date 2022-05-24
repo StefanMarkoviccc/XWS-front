@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { JobHomePageComponent } from './job-home-page/job-home-page.component';
 import { LoginComponent } from './login/login.component';
 import { RegistrationComponent } from './registration/registration.component';
@@ -13,6 +14,7 @@ const routes: Routes = [
   {path: 'user-home-page', component: UserHomePageComponent},
   {path: 'login', component:LoginComponent},
   {path: 'unregistered-home-page', component:UnregisteredHomePageComponent},
+  {path: 'edit-profil', component:EditProfileComponent},
 ];
 
 @NgModule({

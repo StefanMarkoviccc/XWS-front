@@ -15,6 +15,7 @@ import {MatCheckboxModule} from "@angular/material/checkbox";
 import { HttpClientModule } from '@angular/common/http';
 import { MatFormFieldModule } from '@angular/material/form-field';
 //import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -23,6 +24,7 @@ import { RegistrationComponent } from './registration/registration.component';
 import { UserHomePageComponent } from './user-home-page/user-home-page.component';
 import { LoginComponent } from './login/login.component';
 import { UnregisteredHomePageComponent } from './unregistered-home-page/unregistered-home-page.component';
+import { EditProfileComponent } from './edit-profile/edit-profile.component';
 
 
 @NgModule({
@@ -33,6 +35,7 @@ import { UnregisteredHomePageComponent } from './unregistered-home-page/unregist
     UserHomePageComponent,
     LoginComponent,
     UnregisteredHomePageComponent,
+    EditProfileComponent,
   ],
   imports: [
     BrowserModule,
@@ -51,6 +54,7 @@ import { UnregisteredHomePageComponent } from './unregistered-home-page/unregist
     CommonModule,
     MatFormFieldModule,
     //NgbModalModule,
+    MatSlideToggleModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

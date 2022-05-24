@@ -19,8 +19,16 @@ export class ApiService {
     return this.http.get(this.url + '/api/users/user/current', this.generateHeader());
   }
 
+  getUser(data: any){
+    return this.http.get(this.url + '/api/users/' + data.id, this.generateHeader());
+  }
+
   getPublicProfiles(data: any) {
     return this.http.get(this.url + '/api/users/user/PublicUsers?search='+ data.search, this.generateHeader());
+  }
+
+  editProfile(data: any){
+    return this.http.put(this.url + '/api/users/user/' + data.id, data, this.generateHeader());
   }
 
   userRegistration(data: any) {
