@@ -1,0 +1,16 @@
+<div class="page">
+    <mat-card>
+        <mat-card-content>
+            <form [formGroup]="form" (ngSubmit)="onSubmit()">
+                <h2>Set education and experience</h2>
+                <mat-form-field>
+                    <input matInput placeholder="Interest" formControlName="interest" required>
+                </mat-form-field>                
+                <mat-form-field>
+                    <input matInput placeholder="Skills" formControlName="description" required>
+                </mat-form-field> 
+                <button mat-raised-button color="primary">OK</button>
+            </form>
+        </mat-card-content>
+    </mat-card>
+</div>

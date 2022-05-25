@@ -66,7 +66,7 @@ export class EditProfileComponent implements OnInit {
       phone: this.form.get('phoneNumber')?.value,
       birthDate: this.form.get('userType')?.value,
     }).subscribe((response: any) => {
-      this.router.navigate(['/client-home-page']);
+      this.router.navigate(['/user-home-page']);
     })
   }
 }

@@ -25,6 +25,9 @@ import { UserHomePageComponent } from './user-home-page/user-home-page.component
 import { LoginComponent } from './login/login.component';
 import { UnregisteredHomePageComponent } from './unregistered-home-page/unregistered-home-page.component';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
+import { SetEducationAndExperienceComponent } from './set-education-and-experience/set-education-and-experience.component';
+import { SetInterestAndSkillsComponent } from './set-interest-and-skills/set-interest-and-skills.component';
+import { CreateJobffersComponent } from './create-job-offers/create-jobffers.component';
 
 
 @NgModule({
@@ -36,6 +39,9 @@ import { EditProfileComponent } from './edit-profile/edit-profile.component';
     LoginComponent,
     UnregisteredHomePageComponent,
     EditProfileComponent,
+    SetEducationAndExperienceComponent,
+    SetInterestAndSkillsComponent,
+    CreateJobffersComponent,
   ],
   imports: [
     BrowserModule,

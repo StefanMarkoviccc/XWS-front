@@ -1,0 +1,15 @@
+<div class="page">
+    <mat-card>
+        <mat-card-content>
+            <form [formGroup]="form" (ngSubmit)="onSubmit()">
+                <h2>Set education and experience</h2>
+                <mat-form-field>
+                    <input matInput placeholder="Education" formControlName="education" required>
+                </mat-form-field>                
+                <mat-slide-toggle>Experience
+                </mat-slide-toggle>
+                <button mat-raised-button color="primary">OK</button>
+            </form>
+        </mat-card-content>
+    </mat-card>
+</div>
