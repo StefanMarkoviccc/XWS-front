@@ -4,10 +4,15 @@
             <form [formGroup]="form" (ngSubmit)="onSubmit()">
                 <p>Publish post</p>
                 <mat-form-field>
+                    <br>
                     <input matInput placeholder="Contetn" formControlName="content" required>
                 </mat-form-field>
                 <li><a routerLink="/publish-post" routerLinkActive="active">Link</a></li>
+                <br>
+
                 <input type="file" (change)="onFileSelected($event)" />
+                <br>
+
                 <form [formGroup]="form" (ngSubmit)="onSubmit()">
                     <button mat-raised-button color="primary">Publish</button>
                 </form>

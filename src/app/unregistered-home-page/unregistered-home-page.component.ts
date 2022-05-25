@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ApiService } from '../api.service';
 @Component({
-  selector: 'app-user-home-page',
-  templateUrl: './user-home-page.component.html',
-  styleUrls: ['./user-home-page.component.scss']
+  selector: 'app-unregistered-home-page',
+  templateUrl: './unregistered-home-page.component.html',
+  styleUrls: ['./unregistered-home-page.component.scss']
 })
-export class UserHomePageComponent implements OnInit {
+export class UnregisteredHomePageComponent implements OnInit {
 
   form: FormGroup
   profiles: any
@@ -42,5 +42,4 @@ export class UserHomePageComponent implements OnInit {
   onSubmit() {
     this.getPublicProfiles();
   }
-
 }

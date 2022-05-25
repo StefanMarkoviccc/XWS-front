@@ -1,17 +1,17 @@
 <div class="page">
     <mat-card>
-        <mat-card-content>
+        <mat-card-content> 
             <form [formGroup]="form" (ngSubmit)="onSubmit()">
                 <input type="text" placeholder="Search profiles..." formControlName="search">
                 <button mat-raised-button color="primary">Search</button>
-                <li><a routerLink="/edit-profile" routerLinkActive="active">Edit profile</a></li>
-                <li><a routerLink="/set-education-and-experience" routerLinkActive="active">Set education and experience</a></li>
-                <li><a routerLink="/set-interest-and-skills" routerLinkActive="active">Set interest and skills</a></li>
+                <li><a routerLink="/registration" routerLinkActive="active">Registration</a></li>
+                <li><a routerLink="/login" routerLinkActive="active">Login</a></li>
             </form>
             <div class="post" *ngFor="let post of posts">
                 <h1 class="title">{{post.Content}}</h1>
                 <h1 class="title">{{post.Image}}</h1>   
             </div>
+            
         </mat-card-content>
     </mat-card>
 </div>

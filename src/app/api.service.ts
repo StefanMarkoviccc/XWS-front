@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -18,8 +19,28 @@ export class ApiService {
     return this.http.get(this.url + '/api/users/user/current', this.generateHeader());
   }
 
+  getUser(data: any){
+    return this.http.get(this.url + '/api/users/' + data.id, this.generateHeader());
+  }
+
+  getPublicProfiles(data: any) {
+    return this.http.get(this.url + '/api/users/user/PublicUsers?search='+ data.search, this.generateHeader());
+  }
+
+  editProfile(data: any){
+    return this.http.put(this.url + '/api/users/user/' + data.id, data, this.generateHeader());
+  }
+
+  createJobOffers(data: any){
+    return this.http.post(this.url + '/api/jobs/job', data, this.generateHeader())
+  }
+
   userRegistration(data: any) {
     return this.http.post(this.url + '/api/users/user/register', data);
+  }
+
+  getUserPublicPosts() {
+    return this.http.get(this.url + '/api/posts/post/userPublicPosts', this.generateHeader());
   }
 
   generateHeader() : any {
