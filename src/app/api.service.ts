@@ -43,6 +43,10 @@ export class ApiService {
     return this.http.get(this.url + '/api/posts/post/userPublicPosts', this.generateHeader());
   }
 
+  publishPost(data: any){
+    return this.http.post(this.url + 'api/posts/post', data, this.generateHeader());
+  }
+
   generateHeader() : any {
 
     const headers = {
