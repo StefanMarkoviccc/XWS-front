@@ -14,14 +14,14 @@ export class PublishPostComponent implements OnInit {
 
   form: FormGroup
   content : any;
- // base64Output: string;
+  base64Output: string;
   onFileSelected(event:any){
-   // this.convertFile(event.target.files[0]).subscribe(base64 => {
-     // this.base64Output = base64;
-   // });
+    this.convertFile(event.target.files[0]).subscribe(base64 => {
+    this.base64Output = base64;
+   });
   }
 
-  /*convertFile(file: File) : Observable<string> {
+  convertFile(file: File) : Observable<string> {
       const result = new ReplaySubject<string>(1);
       const reader = new FileReader();
       reader.readAsBinaryString(file);
@@ -29,7 +29,7 @@ export class PublishPostComponent implements OnInit {
       reader.onload = (event) => result.next(btoa(event.target?.result ? event.target.result.toString() : ''));
 
       return result;
-  } */
+  } 
 
 
   constructor(private formBuilder: FormBuilder,  private api: ApiService, private activatedRoute: ActivatedRoute,private router: Router) 
@@ -52,6 +52,7 @@ export class PublishPostComponent implements OnInit {
   onSubmit() {
     this.api.publishPost({
       contetn: this.form.get('content')?.value,
+      image: this.base64Output,
     }).subscribe((response: any) => {
       this.router.navigate(['/user-home-page']);
     })

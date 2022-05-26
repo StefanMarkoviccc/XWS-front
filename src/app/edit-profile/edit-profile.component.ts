@@ -36,7 +36,7 @@ export class EditProfileComponent implements OnInit {
       return;
     }
 
-    this.api.getUser({id:this.user.id}).subscribe((response: any) => {
+    this.api.getCurrentUser().subscribe((response: any) => {
 
       console.log(response);
 

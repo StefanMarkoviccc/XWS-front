@@ -16,11 +16,11 @@ export class ApiService {
   }
 
   getCurrentUser() {
-    return this.http.get(this.url + '/api/users/user/current', this.generateHeader());
+    return this.http.get(this.url + '/api/users/user/get-current-user-data', this.generateHeader());
   }
 
   getUser(data: any){
-    return this.http.get(this.url + '/api/users/' + data.id, this.generateHeader());
+    return this.http.get(this.url + '/api/users/user/' + data.id, this.generateHeader());
   }
 
   getPublicProfiles(data: any) {
