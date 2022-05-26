@@ -8,10 +8,14 @@
                 <li><a routerLink="/set-education-and-experience" routerLinkActive="active">Set education and experience</a></li>
                 <li><a routerLink="/set-interest-and-skills" routerLinkActive="active">Set interest and skills</a></li>
                 <li><a routerLink="/publish-post" routerLinkActive="active">Publish post</a></li>
+                <li><a routerLink="/see-follow-requests" routerLinkActive="active">Follow requests</a></li>                
             </form>
+            <div class="user" *ngFor="let user of users" >
+                <p class="title">{{user.firstName}} {{user.lastName}} <button mat-raised-button color="primary" (click)="follow(user)" >Follow</button>
+                </p> 
+            </div>
             <div class="post" *ngFor="let post of posts">
-                <h1 class="title">{{post.Content}}</h1>
-                <h1 class="title">{{post.Image}}</h1>   
+                <p class="title">{{post.Content}} {{post.Image}}</p>  
             </div>
         </mat-card-content>
     </mat-card>

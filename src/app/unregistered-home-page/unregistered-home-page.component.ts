@@ -1,5 +1,7 @@
+
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ApiService } from '../api.service';
 @Component({
   selector: 'app-unregistered-home-page',
@@ -11,12 +13,15 @@ export class UnregisteredHomePageComponent implements OnInit {
   form: FormGroup
   users: any
   posts: any;
+  
 
-  constructor(private formBuilder: FormBuilder, private api : ApiService) 
+  constructor(private formBuilder: FormBuilder, private api : ApiService, private activatedRoute: ActivatedRoute, private router: Router) 
   {
     this.form = this.formBuilder.group({
       search: ['']
-    });   
+    });  
+    
+    
   }
 
   ngOnInit(): void {
@@ -39,11 +44,7 @@ export class UnregisteredHomePageComponent implements OnInit {
     })
   }
 
-  follow() {
-    this.api.follow().subscribe((response: any) => {
-      userWhoFollow: this.api.getCurrentUser()
-    })
-  }
+
 
   onSubmit() {
     this.getPublicProfiles();

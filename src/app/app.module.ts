@@ -29,6 +29,7 @@ import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { SetEducationAndExperienceComponent } from './set-education-and-experience/set-education-and-experience.component';
 import { SetInterestAndSkillsComponent } from './set-interest-and-skills/set-interest-and-skills.component';
 import { CreateJobffersComponent } from './create-job-offers/create-jobffers.component';
+import { SeeFollowRequestsComponent } from './see-follow-requests/see-follow-requests.component';
 
 
 @NgModule({
@@ -44,6 +45,7 @@ import { CreateJobffersComponent } from './create-job-offers/create-jobffers.com
     SetEducationAndExperienceComponent,
     SetInterestAndSkillsComponent,
     CreateJobffersComponent,
+    SeeFollowRequestsComponent,
   ],
   imports: [
     BrowserModule,
