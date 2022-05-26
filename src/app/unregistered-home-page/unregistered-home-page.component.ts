@@ -9,7 +9,7 @@ import { ApiService } from '../api.service';
 export class UnregisteredHomePageComponent implements OnInit {
 
   form: FormGroup
-  profiles: any
+  users: any
   posts: any;
 
   constructor(private formBuilder: FormBuilder, private api : ApiService) 
@@ -35,7 +35,7 @@ export class UnregisteredHomePageComponent implements OnInit {
     let search = this.form.get('search')?.value ? this.form.get('search')?.value : ''
 
     this.api.getPublicProfiles({search: search}).subscribe((response: any) => {
-      this.profiles = response;
+      this.users = response;
     })
   }
 
