@@ -31,7 +31,16 @@ export class LoginComponent implements OnInit {
     }).subscribe((response: any) => {
       console.log(response);
       localStorage.setItem('token', response.token)
-      this.router.navigate(['/user-home-page']);
+
+      this.api.getCurrentUser().subscribe((response2: any) => {
+
+        console.log(response2);
+
+        localStorage.setItem('user', JSON.stringify(response2))
+
+        this.router.navigate(['/user-home-page']);
+    }); 
+      
 
     });
   

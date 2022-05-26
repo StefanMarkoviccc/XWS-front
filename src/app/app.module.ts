@@ -15,6 +15,7 @@ import {MatCheckboxModule} from "@angular/material/checkbox";
 import { HttpClientModule } from '@angular/common/http';
 import { MatFormFieldModule } from '@angular/material/form-field';
 //import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -22,6 +23,12 @@ import { JobHomePageComponent } from './job-home-page/job-home-page.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { UserHomePageComponent } from './user-home-page/user-home-page.component';
 import { LoginComponent } from './login/login.component';
+import { PublishPostComponent } from './publish-post/publish-post.component';
+import { UnregisteredHomePageComponent } from './unregistered-home-page/unregistered-home-page.component';
+import { EditProfileComponent } from './edit-profile/edit-profile.component';
+import { SetEducationAndExperienceComponent } from './set-education-and-experience/set-education-and-experience.component';
+import { SetInterestAndSkillsComponent } from './set-interest-and-skills/set-interest-and-skills.component';
+import { CreateJobffersComponent } from './create-job-offers/create-jobffers.component';
 
 
 @NgModule({
@@ -31,6 +38,12 @@ import { LoginComponent } from './login/login.component';
     RegistrationComponent,
     UserHomePageComponent,
     LoginComponent,
+    PublishPostComponent,
+    UnregisteredHomePageComponent,
+    EditProfileComponent,
+    SetEducationAndExperienceComponent,
+    SetInterestAndSkillsComponent,
+    CreateJobffersComponent,
   ],
   imports: [
     BrowserModule,
@@ -49,6 +62,7 @@ import { LoginComponent } from './login/login.component';
     CommonModule,
     MatFormFieldModule,
     //NgbModalModule,
+    MatSlideToggleModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
