@@ -44,6 +44,7 @@ export class RegistrationComponent implements OnInit {
         gender: this.selectedType,
         phone: this.form.get('phone')?.value,
         birthDate: this.form.get('birthDate')?.value,
+        isPublic: true
         }).subscribe((response: any) => {
         this.router.navigate(['/login']);
       })

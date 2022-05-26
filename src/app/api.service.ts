@@ -47,6 +47,10 @@ export class ApiService {
     return this.http.post(this.url + 'api/posts/post', data, this.generateHeader());
   }
 
+  follow(){
+    return this.http.post(this.url + 'api/userWhoFollows/userWhoFollow/add', this.generateHeader());
+  }
+
   generateHeader() : any {
 
     const headers = {

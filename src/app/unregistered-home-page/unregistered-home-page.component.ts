@@ -39,6 +39,12 @@ export class UnregisteredHomePageComponent implements OnInit {
     })
   }
 
+  follow() {
+    this.api.follow().subscribe((response: any) => {
+      userWhoFollow: this.api.getCurrentUser()
+    })
+  }
+
   onSubmit() {
     this.getPublicProfiles();
   }
