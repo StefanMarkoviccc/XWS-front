@@ -14,6 +14,7 @@ export class PublishPostComponent implements OnInit {
 
   form: FormGroup
   content : any;
+  user: any;
   base64Output: string;
   onFileSelected(event:any){
     this.convertFile(event.target.files[0]).subscribe(base64 => {
@@ -47,12 +48,16 @@ export class PublishPostComponent implements OnInit {
       localStorage.setItem('user', JSON.stringify(response));
       content: this.form.get('content')?.value
 
+      this.user = response;
+
     });
   }
   onSubmit() {
     this.api.publishPost({
-      contetn: this.form.get('content')?.value,
+      content: this.form.get('content')?.value,
+      link: this.form.get('link')?.value,
       image: this.base64Output,
+      userID: this.user.id,
     }).subscribe((response: any) => {
       this.router.navigate(['/user-home-page']);
     })

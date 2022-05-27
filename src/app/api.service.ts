@@ -44,7 +44,7 @@ export class ApiService {
   }
 
   publishPost(data: any){
-    return this.http.post(this.url + 'api/posts/post', data, this.generateHeader());
+    return this.http.post(this.url + '/api/posts/post', data, this.generateHeader());
   }
 
   generateHeader() : any {
