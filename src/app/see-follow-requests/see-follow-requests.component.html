@@ -1,0 +1,13 @@
+<div class="page">
+    <mat-card>
+        <mat-card-content> 
+            <div class="userFollow" *ngFor="let userFollow of userFollows" >
+                <p class="title">{{userFollow.userWhoFollow.firstName}} {{userFollow.userWhoFollow.lastName}}
+                    <div *ngIf="userFollow.user.isPublic==0">
+                        <button mat-raised-button color="primary" (click)="approve(userFollow.id)" >Approve</button>
+                        <button mat-raised-button color="primary" (click)="reject(userFollow.id)" >Reject</button>
+                    </div>       
+            </div>
+        </mat-card-content>
+    </mat-card>
+</div>

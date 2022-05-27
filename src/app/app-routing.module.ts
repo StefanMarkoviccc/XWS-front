@@ -6,6 +6,7 @@ import { JobHomePageComponent } from './job-home-page/job-home-page.component';
 import { LoginComponent } from './login/login.component';
 import { PublishPostComponent } from './publish-post/publish-post.component';
 import { RegistrationComponent } from './registration/registration.component';
+import { SeeFollowRequestsComponent } from './see-follow-requests/see-follow-requests.component';
 import { SetEducationAndExperienceComponent } from './set-education-and-experience/set-education-and-experience.component';
 import { SetInterestAndSkillsComponent } from './set-interest-and-skills/set-interest-and-skills.component';
 import { UnregisteredHomePageComponent } from './unregistered-home-page/unregistered-home-page.component';
@@ -23,6 +24,7 @@ const routes: Routes = [
   {path: 'set-education-and-experience', component:SetEducationAndExperienceComponent},
   {path: 'set-interest-and-skills', component:SetInterestAndSkillsComponent},
   {path: 'create-job-offers', component:CreateJobffersComponent},
+  {path: 'see-follow-requests', component:SeeFollowRequestsComponent},
 ];
 
 @NgModule({

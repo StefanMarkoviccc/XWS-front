@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ApiService } from '../api.service';
 @Component({
   selector: 'app-user-home-page',
@@ -9,14 +10,19 @@ import { ApiService } from '../api.service';
 export class UserHomePageComponent implements OnInit {
 
   form: FormGroup
-  profiles: any
+  users: any
   posts: any;
+  userWhoFollow: any;
 
-  constructor(private formBuilder: FormBuilder, private api : ApiService) 
+  constructor(private formBuilder: FormBuilder, private api : ApiService, private activatedRoute: ActivatedRoute, private router: Router) 
   {
     this.form = this.formBuilder.group({
       search: ['']
     });   
+
+  this.api.getCurrentUser().subscribe((response: any) => {
+    this.userWhoFollow = response;
+});
   }
 
   ngOnInit(): void {
@@ -35,8 +41,23 @@ export class UserHomePageComponent implements OnInit {
     let search = this.form.get('search')?.value ? this.form.get('search')?.value : ''
 
     this.api.getPublicProfiles({search: search}).subscribe((response: any) => {
-      this.profiles = response;
+      this.users = response;
     })
+  }
+
+  follow(user: any) {
+
+    console.log(user, 'lll')
+
+    this.api.follow({
+      user : user,
+   
+      userWhoFollow : this.userWhoFollow
+    }).subscribe((response: any) => {
+     
+      this.router.navigate(['/user-home-page']);
+    })
+
   }
 
   onSubmit() {

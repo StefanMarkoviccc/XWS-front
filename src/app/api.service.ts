@@ -47,6 +47,22 @@ export class ApiService {
     return this.http.post(this.url + '/api/posts/post', data, this.generateHeader());
   }
 
+  follow(data: any){
+    return this.http.post(this.url + 'api/userWhoFollows/userWhoFollow/add', data.id, this.generateHeader());
+  }
+
+  approveFollow(data: any){
+    return this.http.put(this.url + '/api/userWhoFollows/userWhoFollow/approve/' + data.id, data, this.generateHeader());
+  }
+
+  rejectFollow(data: any){
+    return this.http.put(this.url + '/api/userWhoFollows/userWhoFollow/reject/' + data.id, data, this.generateHeader());
+  }
+
+  getFollowRequests(data: any){
+    return this.http.get(this.url + '/api/userWhoFollows/userWhoFollow/' + data.id, this.generateHeader());
+  }
+
   generateHeader() : any {
 
     const headers = {
