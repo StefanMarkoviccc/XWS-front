@@ -44,19 +44,19 @@ export class ApiService {
   }
 
   publishPost(data: any){
-    return this.http.post(this.url + 'api/posts/post', data, this.generateHeader());
+    return this.http.post(this.url + '/api/posts/post', data, this.generateHeader());
   }
 
   follow(data: any){
-    return this.http.post(this.url + 'api/userWhoFollows/userWhoFollow/add', data.id, this.generateHeader());
+    return this.http.post(this.url + '/api/users/userWhoFollow/add', data, this.generateHeader());
   }
 
   approveFollow(data: any){
-    return this.http.put(this.url + '/api/userWhoFollows/userWhoFollow/approve/' + data.id, data, this.generateHeader());
+    return this.http.put(this.url + '/api/users/userWhoFollow/approve/' + data.id, data, this.generateHeader());
   }
 
   rejectFollow(data: any){
-    return this.http.put(this.url + '/api/userWhoFollows/userWhoFollow/reject/' + data.id, data, this.generateHeader());
+    return this.http.put(this.url + '/api/users/userWhoFollow/reject/' + data.id, data, this.generateHeader());
   }
 
   getFollowRequests(data: any){
