@@ -4,6 +4,7 @@ import { CreateJobffersComponent } from './create-job-offers/create-jobffers.com
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { JobHomePageComponent } from './job-home-page/job-home-page.component';
 import { LoginComponent } from './login/login.component';
+import { PostPageComponent } from './post-page/post-page.component';
 import { PublishPostComponent } from './publish-post/publish-post.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { SeeFollowRequestsComponent } from './see-follow-requests/see-follow-requests.component';
@@ -25,6 +26,7 @@ const routes: Routes = [
   {path: 'set-interest-and-skills', component:SetInterestAndSkillsComponent},
   {path: 'create-job-offers', component:CreateJobffersComponent},
   {path: 'see-follow-requests', component:SeeFollowRequestsComponent},
+  {path: 'post-page', component:PostPageComponent},
 ];
 
 @NgModule({
