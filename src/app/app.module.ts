@@ -32,6 +32,8 @@ import { CreateJobffersComponent } from './create-job-offers/create-jobffers.com
 import { SeeFollowRequestsComponent } from './see-follow-requests/see-follow-requests.component';
 import { PostPageComponent } from './post-page/post-page.component';
 
+import { ViewProfileComponent } from './view-profile/view-profile.component';
+
 
 @NgModule({
   declarations: [
@@ -48,6 +50,7 @@ import { PostPageComponent } from './post-page/post-page.component';
     CreateJobffersComponent,
     SeeFollowRequestsComponent,
     PostPageComponent,
+    ViewProfileComponent,
   ],
   imports: [
     BrowserModule,

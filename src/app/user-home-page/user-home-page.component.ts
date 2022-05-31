@@ -10,7 +10,8 @@ import { ApiService } from '../api.service';
 export class UserHomePageComponent implements OnInit {
 
   form: FormGroup
-  users: any
+  users: any;
+  privateUsers: any;
   posts: any;
   userWhoFollow: any;
 
@@ -47,12 +48,9 @@ export class UserHomePageComponent implements OnInit {
 
   follow(user: any) {
 
-    console.log(user, 'lll')
-
     this.api.follow({
-      user : user,
-   
-      userWhoFollow : this.userWhoFollow
+      userId : user.id,
+      userWhoFollowId : this.userWhoFollow.id
     }).subscribe((response: any) => {
      
       this.router.navigate(['/user-home-page']);

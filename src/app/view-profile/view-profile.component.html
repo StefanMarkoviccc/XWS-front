@@ -1,0 +1,16 @@
+<div class="page">
+    <mat-card>
+        <mat-card-content>
+            <form>
+                <h1 class="title">{{user.firstName}} {{user.lastName}}
+                </h1> 
+            </form> 
+            
+            <div class="post" *ngFor="let post of posts">
+                <h1 class="title">{{post.content}}</h1>
+                <h1 class="title">{{post.image}}</h1>   
+            </div>
+            
+        </mat-card-content>
+    </mat-card>
+</div>

@@ -13,18 +13,25 @@ export class SeeFollowRequestsComponent implements OnInit {
   form: FormGroup
   userFollows: any
   user: any;
+  users: any;
   
 
   constructor(private formBuilder: FormBuilder, private api : ApiService, private activatedRoute: ActivatedRoute, private router: Router) 
   {
-    this.api.getCurrentUser().subscribe((response: any) => {
-      this.user = response;
-  });
-
+    this.user = api.getUserFromLocalstorage();
+    this.users = [];
   }
 
   ngOnInit(): void {
-    this.api.getFollowRequests(this.user.id);
+    this.api.getFollowRequests({id: this.user.id}).subscribe((response: any) => {
+      console.log(response)
+      this.userFollows = response;
+    });
+
+    this.api.getAllUsers().subscribe((response: any) => {
+      console.log(response);
+      this.users = response;
+    })
   }
 
 
@@ -38,6 +45,18 @@ export class SeeFollowRequestsComponent implements OnInit {
 
     this.api.rejectFollow(userFollowId);
 
+  }
+
+  getUser(id: any) {
+
+    for(let user of this.users) {
+      if(user.id == id) {
+        console.log(user)
+        return user;
+      }
+    }
+
+    return null;
   }
 }
 
