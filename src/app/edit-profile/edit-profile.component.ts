@@ -20,7 +20,6 @@ export class EditProfileComponent implements OnInit {
       email: ['', Validators.email],
       firstName: ['', Validators.required],
       lastName: ['', Validators.required ],
-      address: ['', Validators.required],
       phone: ['', Validators.required],
       birthDate: ['', Validators.required],
 
@@ -44,9 +43,8 @@ export class EditProfileComponent implements OnInit {
       email: [response.email, Validators.email],
       firstName: [response.firstName, Validators.required],
       lastName: [response.lastName, Validators.required ],
-      address: [response.address, Validators.required],
-      phone: [response.phoneNumber, Validators.required],
-      birthDate: [response.userType, Validators.required],
+      phone: [response.phone, Validators.required],
+      birthDate: [response.birthDate, Validators.required],
     });
   });  
   

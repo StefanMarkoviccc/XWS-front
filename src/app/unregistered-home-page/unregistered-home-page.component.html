@@ -8,7 +8,8 @@
                 <li><a routerLink="/login" routerLinkActive="active">Login</a></li>
             </form>
             <div class="user" *ngFor="let user of users" >
-                <p class="title">{{user.firstName}} {{user.lastName}}
+                <p class="title">{{user.firstName}} {{user.lastName}} <li><a routerLink="/view-profile" [queryParams]="{id: user.id}" routerLinkActive="active">View profile</a></li>
+
                 </p> 
             </div>
             <div class="post" *ngFor="let post of posts">

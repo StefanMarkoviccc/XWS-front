@@ -11,6 +11,7 @@ import { SetEducationAndExperienceComponent } from './set-education-and-experien
 import { SetInterestAndSkillsComponent } from './set-interest-and-skills/set-interest-and-skills.component';
 import { UnregisteredHomePageComponent } from './unregistered-home-page/unregistered-home-page.component';
 import { UserHomePageComponent } from './user-home-page/user-home-page.component';
+import { ViewProfileComponent } from './view-profile/view-profile.component';
 
 const routes: Routes = [
 
@@ -25,6 +26,7 @@ const routes: Routes = [
   {path: 'set-interest-and-skills', component:SetInterestAndSkillsComponent},
   {path: 'create-job-offers', component:CreateJobffersComponent},
   {path: 'see-follow-requests', component:SeeFollowRequestsComponent},
+  {path: 'view-profile', component:ViewProfileComponent},
 ];
 
 @NgModule({

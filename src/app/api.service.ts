@@ -19,6 +19,10 @@ export class ApiService {
     return this.http.get(this.url + '/api/users/user/get-current-user-data', this.generateHeader());
   }
 
+  getAllUsers() {
+    return this.http.get(this.url + '/api/users/user/all', this.generateHeader());
+  }
+
   getUser(data: any){
     return this.http.get(this.url + '/api/users/user/' + data.id, this.generateHeader());
   }
@@ -43,6 +47,10 @@ export class ApiService {
     return this.http.get(this.url + '/api/posts/post/userPublicPosts', this.generateHeader());
   }
 
+  getUserPosts(data : any) {
+    return this.http.get(this.url + '/api/posts/post/userPosts/' + data.id , this.generateHeader());
+  }
+
   publishPost(data: any){
     return this.http.post(this.url + '/api/posts/post', data, this.generateHeader());
   }
@@ -60,7 +68,18 @@ export class ApiService {
   }
 
   getFollowRequests(data: any){
-    return this.http.get(this.url + '/api/userWhoFollows/userWhoFollow/' + data.id, this.generateHeader());
+    return this.http.get(this.url + '/api/users/userWhoFollow/userFollows/' + data.id, this.generateHeader());
+  }
+
+  getUserFromLocalstorage() {
+
+    let userString = localStorage.getItem('user');
+
+    if(!userString) {
+      return null;
+    }
+
+    return JSON.parse(userString);
   }
 
   generateHeader() : any {
