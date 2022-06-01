@@ -28,12 +28,6 @@ export class UnregisteredHomePageComponent implements OnInit {
     this.getPublicProfiles();
   }
 
-  getUserPublicPosts(){
-
-    this.api.getUserPublicPosts().subscribe((response: any) => {
-      this.posts = response;
-  });
-}
 
   getPublicProfiles() {
 
