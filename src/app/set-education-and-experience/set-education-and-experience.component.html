@@ -1,4 +1,14 @@
-<div class="page">
+<div class="navbar">
+    <mat-toolbar color="primary" class="navbar">
+        <div> 
+            <span (click)="navigate('home')">Home </span>
+            <span (click)="navigate('edit')">Edit profile </span>
+            <span (click)="navigate('education')">Education and experience</span>
+            <span (click)="navigate('interest')">Interest and skills</span>
+            <span (click)="navigate('requests')">Follow requests</span>
+            <span (click)="navigate('job')">Job</span>
+       </div>
+    </mat-toolbar> 
     <mat-card>
         <mat-card-content>
             <form [formGroup]="form" (ngSubmit)="onSubmit()">

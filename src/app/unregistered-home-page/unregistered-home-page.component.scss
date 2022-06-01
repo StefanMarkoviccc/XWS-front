@@ -2,7 +2,7 @@
     min-height: calc(100vh - 100px);
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: full;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -16,11 +16,19 @@
 
 mat-card {
     width: 50%;
-    margin: 0 auto;
+    margin: 1 auto;
 }
 
 .title {
     font-style: italic;
     font-size: 20;
+}
+
+.navbar {
+    justify-content: space-between;
+}
+
+span {
+    padding-right: 1rem;
 }
 

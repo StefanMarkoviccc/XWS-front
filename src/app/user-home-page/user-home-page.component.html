@@ -1,16 +1,20 @@
-<div class="page">
+<div class="navbar">
+    <mat-toolbar color="primary" class="navbar">
+        <div> 
+            <span (click)="navigate('home')">Home </span>
+            <span (click)="navigate('edit')">Edit profile </span>
+            <span (click)="navigate('education')">Education and experience</span>
+            <span (click)="navigate('interest')">Interest and skills</span>
+            <span (click)="navigate('requests')">Follow requests</span>
+            <span (click)="navigate('job')">Job</span>
+       </div>
+    </mat-toolbar> 
     <mat-card>
         <mat-card-content>
             <form [formGroup]="form" (ngSubmit)="onSubmit()">
                 <input type="text" placeholder="Search profiles..." formControlName="search">
-                <button mat-raised-button color="primary">Search</button>
-                <li><a routerLink="/edit-profile" routerLinkActive="active">Edit profile</a></li>
-                <li><a routerLink="/set-education-and-experience" routerLinkActive="active">Set education and experience</a></li>
-                <li><a routerLink="/set-interest-and-skills" routerLinkActive="active">Set interest and skills</a></li>
+                <button class="button" mat-raised-button color="primary">Search</button>
                 <li><a routerLink="/publish-post" routerLinkActive="active">Publish post</a></li>
-                <li><a routerLink="/see-follow-requests" routerLinkActive="active">Follow requests</a></li>       
-                <li><a routerLink="/create-job-offers" routerLinkActive="active">Cretae job offers</a></li> 
-                <li><a routerLink="/view-jobs" routerLinkActive="active">View jobs</a></li>                                                 
             </form>
             <h2>Public profiles:</h2>
             <div class="user" *ngFor="let user of users">

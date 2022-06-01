@@ -1,7 +1,19 @@
-<div class="page">
+<div class="navbar">
+    <mat-toolbar color="primary" class="navbar">
+        <div> 
+            <span (click)="navigate('home')">Home </span>
+            <span (click)="navigate('edit')">Edit profile </span>
+            <span (click)="navigate('education')">Education and experience</span>
+            <span (click)="navigate('interest')">Interest and skills</span>
+            <span (click)="navigate('requests')">Follow requests</span>
+            <span (click)="navigate('job')">Job</span>
+       </div>
+    </mat-toolbar> 
     <mat-card>
         <mat-card-content>
-            <form>
+            <button mat-raised-button color="primary" (click)="create()" >New job</button>
+
+            <form> 
                 <input type="text" placeholder="Search jobs..." formControlName="search">
                 <button mat-raised-button color="primary">Search</button>
                 <div class="job" *ngFor="let job of jobs">
