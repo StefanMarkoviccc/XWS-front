@@ -27,7 +27,7 @@
 
             <h2>Followers:</h2>
             <div class="follower" *ngFor="let follower of followers">
-                <p class="title">{{getUser(follower.userWhoFollow.id)?.firstName}} {{getUser(follower.userWhoFollow.id)?.lastName}}
+                <p class="title">{{getUser(follower.user.id)?.firstName}} {{getUser(follower.user.id)?.lastName}}
                     <li><a routerLink="/view-profile" [queryParams]="{id: user.id}" routerLinkActive="active">View profile</a></li>
                 </p> 
             </div>

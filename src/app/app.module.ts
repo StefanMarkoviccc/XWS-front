@@ -16,7 +16,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatFormFieldModule } from '@angular/material/form-field';
 //import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
-import {MatToolbarModule} from '@angular/material/toolbar'
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatTableModule} from '@angular/material/table'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -74,6 +75,7 @@ import { ViewJobsComponent } from './view-jobs/view-jobs.component';
     //NgbModalModule,
     MatSlideToggleModule,
     MatToolbarModule,
+    MatTableModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

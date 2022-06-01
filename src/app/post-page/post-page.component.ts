@@ -40,6 +40,18 @@ export class PostPageComponent implements OnInit {
 
   }
 
+  getUser(id: any) {
+
+    for(let user of this.users) {
+      if(user.id == id) {
+        console.log(user)
+        return user;
+      }
+    }
+
+    return null;
+  }
+
   ngOnInit(): void {
     const userString = localStorage.getItem('user');
     if(!userString) {
@@ -64,41 +76,33 @@ export class PostPageComponent implements OnInit {
     }).subscribe((response: any) => {
       this.post = response
 
-        this.api.getAllPostComments({
-          postId: this.postId
-        }).subscribe((response: any) => {
-          this.comments=response;
-        })
-
-        this.api.getAllReactionsByPost({
-          postId: this.postId
-        }).subscribe((response:any)=> {
-            this.reactions=response;
-        })
+       
     })
 
+    this.api.getAllPostComments({
+      id: this.postId
+    }).subscribe((response: any) => {
+      this.comments=response;
+    })
 
-  }
+    this.api.getAllReactionsByPost({
+      id: this.postId
+    }).subscribe((response:any)=> {
+        this.reactions=response;
+    })
 
-  userFunc(userId:any) : any {
-    for(let user of this.users){
-      if(user.id == userId){
-        return user;
-      }
-    }
-
-    return null;
   }
 
   Like(){
-console.log(this.postId);
 
     this.api.react({
       userId : this.user.id,
       postId: this.postId,
-      reactions : 0 
+      reactionType : 0 
 
     }).subscribe((response:any)=> {
+      console.log(response);
+
       this.load()
     })
 
@@ -108,7 +112,7 @@ console.log(this.postId);
     this.api.react({
       userId : this.user.id,
       postId: this.postId,
-      reactions : 1 
+      reactionType : 1 
 
     }).subscribe((response:any)=> {
       this.load()

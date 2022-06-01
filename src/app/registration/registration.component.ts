@@ -49,4 +49,19 @@ export class RegistrationComponent implements OnInit {
         this.router.navigate(['/login']);
       })
     }
+
+    navigate(data : any){
+      if(data === 'login'){
+        this.router.navigate(['/login']);
+      }
+  
+      else if(data === 'registration'){
+        this.router.navigate(['/registration']);
+      }
+      else if(data === 'home'){
+        this.router.navigate(['/unregistered-home-page']);
+      }
+      
+    }
+  
   }

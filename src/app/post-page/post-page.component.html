@@ -19,19 +19,15 @@
                 </div>
                 <h2>Comments:</h2>
         <div class="comment" *ngFor="let comment of comments">
-            <p class="title"> {{userFunc(comment.userId)?.name}} {{comment.content}}
+            <p class="title"> {{getUser(comment.userId)?.firstName}} {{comment.content}}
             </p> 
         </div>
 
         <h2>Reactions:</h2>
         <div class="reaction" *ngFor="let reaction of reactions">
-            <p class="title"> {{reaction.reactions}}
+            <p class="title"> {{getUser(reaction.userId)?.firstName}}  {{reaction.reactionType}} 
             </p> 
         </div>
         </mat-card-content>
     </mat-card>
-
-
-        
-
 </div>

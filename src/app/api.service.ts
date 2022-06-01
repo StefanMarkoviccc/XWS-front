@@ -44,11 +44,11 @@ export class ApiService {
   }
 
   comment(data: any){
-    return this.http.post(this.url + '/api/posts/comment', data, this.generateHeader());
+    return this.http.post(this.url + '/api/posts/comments', data, this.generateHeader());
   }
 
   getAllPostComments(data: any){
-    return this.http.get(this.url + '/api/posts/comment/postComments/' + data.id, this.generateHeader());
+    return this.http.get(this.url + '/api/posts/comments/postComments/' + data.id, this.generateHeader());
   }
 
   getPublicProfiles(data: any) {

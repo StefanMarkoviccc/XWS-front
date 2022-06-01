@@ -40,8 +40,6 @@ this.users = [];
   ngOnInit(): void {
     this.getPublicProfiles();
     this.putInUserIds(this.users);
-    this.getUserPublicPosts();
-
     this.getAllUserFollowers();
   }
 

@@ -1,4 +1,11 @@
-<div class="page">
+<div class="navbar">  
+    <mat-toolbar color="primary" class="navbar">
+        <div> 
+            <span (click)="navigate('home')">Home </span>
+            <span (click)="navigate('login')">Login </span>
+            <span (click)="navigate('registration')">Registration</span>
+       </div>
+       </mat-toolbar>
     <mat-card>
         <mat-card-content>
             <form [formGroup]="form" (ngSubmit)="onSubmit()">
