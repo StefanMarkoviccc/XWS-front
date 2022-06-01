@@ -31,6 +31,26 @@ export class ApiService {
     return this.http.get(this.url + '/api/users/user/' + data.id, this.generateHeader());
   }
 
+  getPost(data: any){
+    return this.http.get(this.url + '/api/posts/post/' + data.id, this.generateHeader());
+  }
+
+  getAllReactionsByPost(data: any){
+    return this.http.get(this.url + '/api/posts/reaction/postReaction/' + data.id, this.generateHeader());
+  }
+
+  react(data: any){
+    return this.http.post(this.url + '/api/posts/reaction', data, this.generateHeader());
+  }
+
+  comment(data: any){
+    return this.http.post(this.url + '/api/posts/comment', data, this.generateHeader());
+  }
+
+  getAllPostComments(data: any){
+    return this.http.get(this.url + '/api/posts/comment/postComments/' + data.id, this.generateHeader());
+  }
+
   getPublicProfiles(data: any) {
     return this.http.get(this.url + '/api/users/user/PublicUsers?search='+ data.search, this.generateHeader());
   }
@@ -47,7 +67,7 @@ export class ApiService {
     return this.http.post(this.url + '/api/users/user/register', data);
   }
 
-  getUserPublicPosts() {
+  getUserPublicPosts(data: any) {
     return this.http.get(this.url + '/api/posts/post/userPublicPosts', this.generateHeader());
   }
 

@@ -31,6 +31,8 @@ import { SetEducationAndExperienceComponent } from './set-education-and-experien
 import { SetInterestAndSkillsComponent } from './set-interest-and-skills/set-interest-and-skills.component';
 import { CreateJobffersComponent } from './create-job-offers/create-jobffers.component';
 import { SeeFollowRequestsComponent } from './see-follow-requests/see-follow-requests.component';
+import { PostPageComponent } from './post-page/post-page.component';
+
 import { ViewProfileComponent } from './view-profile/view-profile.component';
 import { ViewJobsComponent } from './view-jobs/view-jobs.component';
 
@@ -49,6 +51,7 @@ import { ViewJobsComponent } from './view-jobs/view-jobs.component';
     SetInterestAndSkillsComponent,
     CreateJobffersComponent,
     SeeFollowRequestsComponent,
+    PostPageComponent,
     ViewProfileComponent,
     ViewJobsComponent,
   ],

@@ -1,0 +1,37 @@
+<div class="page">
+    <mat-card>
+        <mat-card-content>
+                <h2>Post</h2>
+                <div class="post">
+                <p>Content: {{post?.content}}</p>
+                <img src="{{data:image/jpg;base64,' + post?.image}}" height="50" width="50"/>
+                <a href="{{post?.link}}">{{post?.link}}</a>
+                <br>
+                <button (click)="Like()">Like</button>
+                <button (click)="Dislike()">Dislike</button>
+                <form [formGroup] = "form" (ngSubmit)="onSubmit()" >
+                    <h2>Post comment</h2>
+                    <mat-form-field>
+                        <input matInput placeholder="Content" formControlName="content" required>
+                    </mat-form-field> 
+                    <button mat-raised-button>Comment</button>
+                </form>
+                </div>
+                <h2>Comments:</h2>
+        <div class="comment" *ngFor="let comment of comments">
+            <p class="title"> {{userFunc(comment.userId)?.name}} {{comment.content}}
+            </p> 
+        </div>
+
+        <h2>Reactions:</h2>
+        <div class="reaction" *ngFor="let reaction of reactions">
+            <p class="title"> {{reaction.reactions}}
+            </p> 
+        </div>
+        </mat-card-content>
+    </mat-card>
+
+
+        
+
+</div>
