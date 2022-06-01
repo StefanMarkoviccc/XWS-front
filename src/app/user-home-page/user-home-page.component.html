@@ -14,21 +14,32 @@
             <form [formGroup]="form" (ngSubmit)="onSubmit()">
                 <input type="text" placeholder="Search profiles..." formControlName="search">
                 <button class="button" mat-raised-button color="primary">Search</button>
-                <li><a routerLink="/publish-post" routerLinkActive="active">Publish post</a></li>
+                <p>
+                <button mat-raised-button color="primary" (click)="createPost()" >Publish post</button>
+                </p>
+                <div class="post" *ngFor="let post of posts">
+                    <h3>Post:</h3>
+                    <p class="title">{{post.content}}</p>
+                    <p class="title">{{post.link}}</p>
+                    <p class="title">{{post.image}}</p>
+                    <li><a routerLink="/post-page" [queryParams]="{id: post.id}" routerLinkActive="active">View post</a></li>  
+                </div>
             </form>
             <h2>Public profiles:</h2>
             <div class="user" *ngFor="let user of users">
+                <div *ngIf="user.id != thisUserId">
                 <p class="title">{{user.firstName}} {{user.lastName}}
                     <li><a routerLink="/view-profile" [queryParams]="{id: user.id}" routerLinkActive="active">View profile</a></li>
 
                     <button mat-raised-button color="primary" (click)="follow(user)" >Follow</button>
                 </p> 
+                </div>
             </div>
 
             <h2>Followers:</h2>
             <div class="follower" *ngFor="let follower of followers">
                 <p class="title">{{getUser(follower.user.id)?.firstName}} {{getUser(follower.user.id)?.lastName}}
-                    <li><a routerLink="/view-profile" [queryParams]="{id: user.id}" routerLinkActive="active">View profile</a></li>
+                    <li><a routerLink="/view-profile" [queryParams]="{id: follower.user.id}" routerLinkActive="active">View profile</a></li>
                 </p> 
             </div>
         </mat-card-content>
