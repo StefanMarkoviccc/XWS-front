@@ -33,6 +33,7 @@ import { SeeFollowRequestsComponent } from './see-follow-requests/see-follow-req
 import { PostPageComponent } from './post-page/post-page.component';
 
 import { ViewProfileComponent } from './view-profile/view-profile.component';
+import { ViewJobsComponent } from './view-jobs/view-jobs.component';
 
 
 @NgModule({
@@ -51,6 +52,7 @@ import { ViewProfileComponent } from './view-profile/view-profile.component';
     SeeFollowRequestsComponent,
     PostPageComponent,
     ViewProfileComponent,
+    ViewJobsComponent,
   ],
   imports: [
     BrowserModule,

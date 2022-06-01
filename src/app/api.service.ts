@@ -23,6 +23,10 @@ export class ApiService {
     return this.http.get(this.url + '/api/users/user/all', this.generateHeader());
   }
 
+  getAllJobs() {
+    return this.http.get(this.url + '/api/jobs/job/all', this.generateHeader());
+  }
+
   getUser(data: any){
     return this.http.get(this.url + '/api/users/user/' + data.id, this.generateHeader());
   }
@@ -89,6 +93,10 @@ export class ApiService {
 
   getFollowRequests(data: any){
     return this.http.get(this.url + '/api/users/userWhoFollow/userFollows/' + data.id, this.generateHeader());
+  }
+
+  getAllUserFollowers(data : any){
+    return this.http.get(this.url + '/api/users/userWhoFollow/userApproveFollows/' + data.id, this.generateHeader());
   }
 
   getUserFromLocalstorage() {
