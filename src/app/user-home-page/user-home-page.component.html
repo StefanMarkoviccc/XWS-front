@@ -9,8 +9,10 @@
                 <li><a routerLink="/set-interest-and-skills" routerLinkActive="active">Set interest and skills</a></li>
                 <li><a routerLink="/publish-post" routerLinkActive="active">Publish post</a></li>
                 <li><a routerLink="/see-follow-requests" routerLinkActive="active">Follow requests</a></li>       
-                <li><a routerLink="/create-job-offers" routerLinkActive="active">Cretae job offers</a></li>                         
+                <li><a routerLink="/create-job-offers" routerLinkActive="active">Cretae job offers</a></li> 
+                <li><a routerLink="/view-jobs" routerLinkActive="active">View jobs</a></li>                                                 
             </form>
+            <h2>Public profiles:</h2>
             <div class="user" *ngFor="let user of users">
                 <p class="title">{{user.firstName}} {{user.lastName}}
                     <li><a routerLink="/view-profile" [queryParams]="{id: user.id}" routerLinkActive="active">View profile</a></li>
@@ -18,8 +20,12 @@
                     <button mat-raised-button color="primary" (click)="follow(user)" >Follow</button>
                 </p> 
             </div>
-            <div class="post" *ngFor="let post of posts">
-                <p class="title">{{post.Content}} {{post.Image}}</p>  
+
+            <h2>Followers:</h2>
+            <div class="follower" *ngFor="let follower of followers">
+                <p class="title">{{getUser(follower.userWhoFollow.id)?.firstName}} {{getUser(follower.userWhoFollow.id)?.lastName}}
+                    <li><a routerLink="/view-profile" [queryParams]="{id: user.id}" routerLinkActive="active">View profile</a></li>
+                </p> 
             </div>
         </mat-card-content>
     </mat-card>

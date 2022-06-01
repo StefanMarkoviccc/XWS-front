@@ -27,8 +27,9 @@ export class ViewProfileComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
     this.api.getUserPosts({
-      id:  parseInt(this.id)
+      id:  this.id
     }).subscribe((response: any) => {
       this.posts = response;
     })
@@ -38,6 +39,9 @@ export class ViewProfileComponent implements OnInit {
     }).subscribe((response: any) => {
       this.user = response;
     })
+
+    console.log(this.user);
+
   }
 
 

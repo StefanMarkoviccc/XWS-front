@@ -31,6 +31,7 @@ import { SetInterestAndSkillsComponent } from './set-interest-and-skills/set-int
 import { CreateJobffersComponent } from './create-job-offers/create-jobffers.component';
 import { SeeFollowRequestsComponent } from './see-follow-requests/see-follow-requests.component';
 import { ViewProfileComponent } from './view-profile/view-profile.component';
+import { ViewJobsComponent } from './view-jobs/view-jobs.component';
 
 
 @NgModule({
@@ -48,6 +49,7 @@ import { ViewProfileComponent } from './view-profile/view-profile.component';
     CreateJobffersComponent,
     SeeFollowRequestsComponent,
     ViewProfileComponent,
+    ViewJobsComponent,
   ],
   imports: [
     BrowserModule,
