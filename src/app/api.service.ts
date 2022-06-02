@@ -99,6 +99,10 @@ export class ApiService {
     return this.http.get(this.url + '/api/users/userWhoFollow/userApproveFollows/' + data.id, this.generateHeader());
   }
 
+  createApiKey(data : any){
+    return this.http.post(this.url + '/api/jobs/apiKey/createApiKey', data , this.generateHeader());
+  }
+
   getUserFromLocalstorage() {
 
     let userString = localStorage.getItem('user');

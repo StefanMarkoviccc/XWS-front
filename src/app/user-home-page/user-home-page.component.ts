@@ -128,4 +128,14 @@ getAllUserFollowers(){
     }
   }
 
+  generateApiKey()
+  {
+    this.api.createApiKey({
+      userId: this.user.id,
+      ApiKeyString: ''
+    }).subscribe((response : any) =>{
+
+    })
+  }
+
 }

@@ -44,7 +44,7 @@ export class UnregisteredHomePageComponent implements OnInit {
     }
 
     else if(data === 'registration'){
-      this.router.navigate(['/login']);
+      this.router.navigate(['/registration']);
     }
     
   }

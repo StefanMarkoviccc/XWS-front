@@ -91,8 +91,6 @@ export class PostPageComponent implements OnInit {
   }
 
   Like(){
-console.log(this.postId);
-
     this.api.react({
       userId : this.user.id,
       postId: this.postId,
