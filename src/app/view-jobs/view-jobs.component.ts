@@ -31,18 +31,31 @@ export class ViewJobsComponent implements OnInit {
 
     this.form = this.formBuilder.group({
       search: ['']
-    }); 
+    });   
+
   }
 
   ngOnInit(): void {
-    this.api.getAllJobs().subscribe((response: any) => {
-      this.jobs = response;
-    })
+    this.getAllJobs();
   }
 
   onSubmit() {
-    this.api.getAllJobs();
+    this.getAllJobs();
   }
+
+
+  getAllJobs() {
+      let search = this.form.get('search')?.value ? this.form.get('search')?.value : ''
+
+
+      this.api.getAllJobs({search: search}).subscribe((response: any) => {
+        this.jobs = response;
+      })
+      console.log(search);
+
+      
+    }
+
 
   navigate(data : any){
     if(data === 'edit'){

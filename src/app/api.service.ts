@@ -23,8 +23,8 @@ export class ApiService {
     return this.http.get(this.url + '/api/users/user/all', this.generateHeader());
   }
 
-  getAllJobs() {
-    return this.http.get(this.url + '/api/jobs/job/all', this.generateHeader());
+  getAllJobs(data: any) {
+    return this.http.get(this.url + '/api/jobs/job/all?term='+ data.search, this.generateHeader());
   }
 
   getUser(data: any){
@@ -52,7 +52,7 @@ export class ApiService {
   }
 
   getPublicProfiles(data: any) {
-    return this.http.get(this.url + '/api/users/user/PublicUsers?search='+ data.search, this.generateHeader());
+    return this.http.get(this.url + '/api/users/user/publicUsers?term='+ data.search, this.generateHeader());
   }
 
   editProfile(data: any){
