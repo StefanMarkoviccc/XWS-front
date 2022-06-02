@@ -26,12 +26,15 @@ export class UserHomePageComponent implements OnInit {
       search: ['']
     });   
 
+    this.followers = [];
+
     this.user = api.getUserFromLocalstorage();
     this.thisUserId = this.user.id;
 
 
   this.api.getCurrentUser().subscribe((response: any) => {
     this.userWhoFollow = response;
+
 });
 
 this.users = [];
@@ -59,6 +62,15 @@ this.users = [];
       this.posts = response;
   });
 }
+
+isUserFollowing(user : any){
+  for(let follower of this.followers){
+    if(follower.user.id == user.id){ 
+      return true;
+    }
+  }
+  return false;
+  }
 
 createPost() {
   this.router.navigate(['/publish-post']);

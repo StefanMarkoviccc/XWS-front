@@ -25,14 +25,14 @@
                     <li><a routerLink="/post-page" [queryParams]="{id: post.id}" routerLinkActive="active">View post</a></li>  
                 </div>
             </form>
+
             <h2>Public profiles:</h2>
             <div class="user" *ngFor="let user of users">
-                <div *ngIf="user.id != thisUserId">
+                <div *ngIf="user.id != thisUserId && !isUserFollowing(user)">
                 <p class="title">{{user.firstName}} {{user.lastName}}
                     <li><a routerLink="/view-profile" [queryParams]="{id: user.id}" routerLinkActive="active">View profile</a></li>
-
                     <button mat-raised-button color="primary" (click)="follow(user)" >Follow</button>
-                </p> 
+                </p>
                 </div>
             </div>
 
