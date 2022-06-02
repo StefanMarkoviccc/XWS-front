@@ -12,8 +12,7 @@
     <mat-card>
         <mat-card-content>
             <button mat-raised-button color="primary" (click)="create()" >New job</button>
-
-            <form> 
+            <form [formGroup]="form" (ngSubmit)="onSubmit()"> 
                 <input type="text" placeholder="Search jobs..." formControlName="search">
                 <button mat-raised-button color="primary">Search</button>
                 <div class="job" *ngFor="let job of jobs">
@@ -22,7 +21,7 @@
                     <p class="title">Position : {{job.jobPosition}}</p>   
                     <p class="title">Conditions : {{job.jobConditions}}</p>   
                 </div>
-            </form> 
+            </form>
         </mat-card-content>
     </mat-card>
 </div>

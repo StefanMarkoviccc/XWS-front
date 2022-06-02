@@ -2,35 +2,60 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ApiService } from '../api.service';
+
+export interface PeriodicElement {
+  name: string;
+  position: number;
+  weight: number;
+  symbol: string;
+}
+
 @Component({
   selector: 'app-view-jobs',
   templateUrl: './view-jobs.component.html',
   styleUrls: ['./view-jobs.component.scss']
 })
+
 export class ViewJobsComponent implements OnInit {
+
+
 
   form: FormGroup
   id: any
   job: any;
   jobs: any;
 
+
   constructor(private formBuilder: FormBuilder, private api : ApiService, private activatedRoute: ActivatedRoute, private router: Router) 
   {
 
     this.form = this.formBuilder.group({
       search: ['']
-    }); 
+    });   
+
   }
 
   ngOnInit(): void {
-    this.api.getAllJobs().subscribe((response: any) => {
-      this.jobs = response;
-    })
+    this.getAllJobs();
   }
 
   onSubmit() {
-    this.api.getAllJobs();
+    this.getAllJobs();
   }
+
+
+  getAllJobs() {
+      let search = this.form.get('search')?.value ? this.form.get('search')?.value : ''
+
+
+      this.api.getAllJobs({search: search}).subscribe((response: any) => {
+        this.jobs = response;
+      })
+      console.log(search);
+
+      
+    }
+
 
   navigate(data : any){
     if(data === 'edit'){

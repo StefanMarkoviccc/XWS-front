@@ -18,6 +18,7 @@ export class UserHomePageComponent implements OnInit {
   followers: any;
   user: any;
   follower: any;
+  thisUserId : any;
 
   constructor(private formBuilder: FormBuilder, private api : ApiService, private activatedRoute: ActivatedRoute, private router: Router) 
   {
@@ -25,11 +26,15 @@ export class UserHomePageComponent implements OnInit {
       search: ['']
     });   
 
+    this.followers = [];
+
     this.user = api.getUserFromLocalstorage();
+    this.thisUserId = this.user.id;
 
 
   this.api.getCurrentUser().subscribe((response: any) => {
     this.userWhoFollow = response;
+
 });
 
 this.users = [];
@@ -40,9 +45,13 @@ this.users = [];
   ngOnInit(): void {
     this.getPublicProfiles();
     this.putInUserIds(this.users);
-    this.getUserPublicPosts();
-
     this.getAllUserFollowers();
+
+    this.api.getUserPosts({
+      id:  this.user.id
+    }).subscribe((response: any) => {
+      this.posts = response;
+    })
   }
 
   getUserPublicPosts(){
@@ -52,6 +61,19 @@ this.users = [];
     }).subscribe((response: any) => {
       this.posts = response;
   });
+}
+
+isUserFollowing(user : any){
+  for(let follower of this.followers){
+    if(follower.user.id == user.id){ 
+      return true;
+    }
+  }
+  return false;
+  }
+
+createPost() {
+  this.router.navigate(['/publish-post']);
 }
 
 getUser(id: any) {

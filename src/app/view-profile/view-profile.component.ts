@@ -45,25 +45,17 @@ export class ViewProfileComponent implements OnInit {
   }
 
   navigate(data : any){
-    if(data === 'edit'){
-      this.router.navigate(['/edit-profile']);
+    if(data === 'login'){
+      this.router.navigate(['/login']);
     }
 
-    else if(data === 'education'){
-      this.router.navigate(['/set-education-and-experience']);
-    }
-    else if(data === 'interest'){
-      this.router.navigate(['/set-interest-and-skills']);
-    }
-    else if(data === 'requests'){
-      this.router.navigate(['/see-follow-requests']);
-    }
-    else if(data === 'job'){
-      this.router.navigate(['/view-jobs']);
+    else if(data === 'registration'){
+      this.router.navigate(['/registration']);
     }
     else if(data === 'home'){
-      this.router.navigate(['/user-home-page']);
+      this.router.navigate(['/unregistered-home-page']);
     }
+    
   }
 
 

@@ -23,8 +23,8 @@ export class ApiService {
     return this.http.get(this.url + '/api/users/user/all', this.generateHeader());
   }
 
-  getAllJobs() {
-    return this.http.get(this.url + '/api/jobs/job/all', this.generateHeader());
+  getAllJobs(data: any) {
+    return this.http.get(this.url + '/api/jobs/job/all?term='+ data.search, this.generateHeader());
   }
 
   getUser(data: any){
@@ -44,15 +44,15 @@ export class ApiService {
   }
 
   comment(data: any){
-    return this.http.post(this.url + '/api/posts/comment', data, this.generateHeader());
+    return this.http.post(this.url + '/api/posts/comments', data, this.generateHeader());
   }
 
   getAllPostComments(data: any){
-    return this.http.get(this.url + '/api/posts/comment/postComments/' + data.id, this.generateHeader());
+    return this.http.get(this.url + '/api/posts/comments/postComments/' + data.id, this.generateHeader());
   }
 
   getPublicProfiles(data: any) {
-    return this.http.get(this.url + '/api/users/user/PublicUsers?search='+ data.search, this.generateHeader());
+    return this.http.get(this.url + '/api/users/user/publicUsers?term='+ data.search, this.generateHeader());
   }
 
   editProfile(data: any){
