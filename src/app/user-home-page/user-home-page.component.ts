@@ -89,6 +89,8 @@ getUser(id: any) {
 
 getAllUserFollowers(){
 
+  console.log(this.user);
+
   this.api.getAllUserFollowers({
     id: this.user.id
   }).subscribe((response : any) => {

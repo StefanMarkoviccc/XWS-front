@@ -14,6 +14,8 @@ export class ViewProfileComponent implements OnInit {
   id: any
   posts: any;
   user: any;
+  followers: any;
+  currentUser: any;
   
 
   constructor(private formBuilder: FormBuilder, private api : ApiService, private activatedRoute: ActivatedRoute, private router: Router) 
@@ -22,9 +24,11 @@ export class ViewProfileComponent implements OnInit {
       this.id = params['id'];
     });
     
+    this.followers = [];
 
-    
-  }
+    this.currentUser = this.api.getCurrentUser();
+    console.log(this.currentUser);
+     }
 
   ngOnInit(): void {
 
@@ -56,6 +60,14 @@ export class ViewProfileComponent implements OnInit {
       this.router.navigate(['/unregistered-home-page']);
     }
     
+  }
+
+  isLogin(){
+    if(this.currentUser == null){
+
+      return false;
+    }
+    return true;
   }
 
 

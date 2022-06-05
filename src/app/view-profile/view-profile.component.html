@@ -17,7 +17,7 @@
                 <h3>Post:</h3>
                 <p class="title">{{post.content}}</p>
                 <p class="title">{{post.link}}</p>
-                <p class="title">{{post.image}}</p> 
+                <img src="{{'data:image/jpg;base64,' + post?.image}}" height="50" width="50"/>
                 <li><a routerLink="/post-page" [queryParams]="{id: post.id}" routerLinkActive="active">View post</a></li>  
             </div>
             
